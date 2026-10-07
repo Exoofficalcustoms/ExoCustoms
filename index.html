@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EXO</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,900;1,900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="logo-wrap">
+        <img src="https://p16-common-sign.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/9b732c8af73f254067ed559afeccc30b~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=10399&refresh_token=f372d92f&x-expires=1791572400&x-signature=VEWg%2FB89JTWJaMDcdjWlRUCxYjA%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a" alt="EXO" class="nav-logo" />
+        <span class="brand-name">EXO</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Shop</a></li>
+        <li><a href="#about">About</a></li>
+        <li>
+          <a href="#cart-section" class="cart-link">
+            Cart <span class="cart-bubble" id="cart-count">0</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <img
+        src="https://p16-common-sign.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/9b732c8af73f254067ed559afeccc30b~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=10399&refresh_token=f372d92f&x-expires=1791572400&x-signature=VEWg%2FB89JTWJaMDcdjWlRUCxYjA%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a"
+        alt="EXO"
+        class="hero-logo"
+      />
+      <h1 class="hero-title">EXO</h1>
+      <p class="hero-tagline">Scooter parts. No cap.</p>
+      <a href="#products" class="btn-hero">Shop Now</a>
+    </div>
+    <div class="hero-scroll">↓</div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <span>NEW DROP &nbsp;·&nbsp; ORDER NOW &nbsp;·&nbsp; EXO PARTS &nbsp;·&nbsp; NEW DROP &nbsp;·&nbsp; ORDER NOW &nbsp;·&nbsp; EXO PARTS &nbsp;·&nbsp; NEW DROP &nbsp;·&nbsp; ORDER NOW &nbsp;·&nbsp; EXO PARTS &nbsp;·&nbsp; NEW DROP &nbsp;·&nbsp; ORDER NOW &nbsp;·&nbsp; EXO PARTS &nbsp;·&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <section class="products-section" id="products">
+    <div class="products-header">
+      <span class="label-tag">The Drop</span>
+      <h2 class="products-title">Shop</h2>
+      <p class="products-sub">Add to cart, fill in your details and check out below.</p>
+    </div>
+
+    <div class="products-grid">
+
+      <!-- WHEELIE BAR -->
+      <div class="product-card">
+        <div class="prod-img-wrap">
+          <img
+            src="wheeliebar.jpg"
+            alt="EXO Wheelie Bar"
+            class="prod-img prod-img-white"
+            loading="lazy"
+            onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback')"
+          />
+        </div>
+        <div class="prod-body">
+          <div class="prod-top">
+            <h3 class="prod-name">Wheelie Bar</h3>
+          </div>
+          <p class="prod-desc">EXO wheelie bar keeps your back wheel planted so you can hold wheelies longer and cleaner. Fits tight, no flex, no rattle.</p>
+
+          <!-- SCOOTER MODEL SELECTOR -->
+          <div class="model-select-wrap">
+            <label class="model-label">Select your scooter</label>
+            <div class="model-options" id="model-options">
+              <button class="model-btn" onclick="selectModel(this, 'G2')">G2</button>
+              <button class="model-btn" onclick="selectModel(this, 'G3')">G3</button>
+              <button class="model-btn" onclick="selectModel(this, 'G4')">G4</button>
+              <button class="model-btn" onclick="selectModel(this, 'Joyor T10')">Joyor T10</button>
+            </div>
+            <span class="model-error" id="model-error"></span>
+          </div>
+
+          <div class="prod-bottom">
+            <span class="prod-price">€65</span>
+            <button class="btn-cart" onclick="addToCartWithModel()">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- HYDRAULIC BRAKES -->
+      <div class="product-card">
+        <div class="prod-img-wrap">
+          <img
+            src="brakes.png"
+            alt="EXO Hydraulic Brakes"
+            class="prod-img prod-img-white"
+            loading="lazy"
+            onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback')"
+          />
+        </div>
+        <div class="prod-body">
+          <div class="prod-top">
+            <h3 class="prod-name">Hydraulic Brakes</h3>
+          </div>
+          <p class="prod-desc">EXO hydraulic brakes — lever and caliper set. One finger pull, instant bite. Way better than cable, way cleaner looking too.</p>
+          <div class="prod-bottom">
+            <span class="prod-price">€60</span>
+            <button class="btn-cart" onclick="addToCart('Hydraulic Brakes', 60)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- GUTS PLATE -->
+      <div class="product-card">
+        <div class="prod-img-wrap">
+          <img
+            src="plate.png"
+            alt="EXO Guts Plate"
+            class="prod-img"
+            loading="lazy"
+            onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback')"
+          />
+        </div>
+        <div class="prod-body">
+          <div class="prod-top">
+            <h3 class="prod-name">Guts Plate</h3>
+          </div>
+          <p class="prod-desc">Custom EXO number plate. Fits most pro scooters, gloss black finish. Completes the setup and shows you run EXO.</p>
+          <div class="prod-bottom">
+            <span class="prod-price">€20</span>
+            <button class="btn-cart" onclick="addToCart('Guts Plate', 20)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CART + CHECKOUT — one scroll section -->
+  <section class="cart-section" id="cart-section">
+
+    <!-- LEFT: cart items -->
+    <div class="checkout-layout">
+      <div class="checkout-left">
+        <h2 class="cart-title">Cart</h2>
+        <div class="cart-box">
+          <ul class="cart-items" id="cart-items">
+            <li class="cart-empty" id="cart-empty">Nothing in your cart yet.</li>
+          </ul>
+
+          <div class="cart-discount">
+            <div class="discount-fields">
+              <input type="text" id="discount-input" placeholder="Discount code" autocomplete="off" />
+              <button class="btn-apply" onclick="applyDiscount()">Apply</button>
+            </div>
+            <span class="discount-msg" id="discount-msg"></span>
+          </div>
+
+          <div class="cart-totals">
+            <div class="trow">
+              <span>Subtotal</span>
+              <span id="subtotal">€0.00</span>
+            </div>
+            <div class="trow" id="discount-row" style="display:none;">
+              <span class="dsaving">Discount</span>
+              <span class="dsaving" id="discount-amount">-€0.00</span>
+            </div>
+            <div class="trow trow-total">
+              <span>Total</span>
+              <span id="total-final">€0.00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: checkout form -->
+      <div class="checkout-right">
+        <h2 class="cart-title">Checkout</h2>
+        <form class="checkout-form" id="checkout-form" onsubmit="submitOrder(event)">
+
+          <div class="form-group">
+            <label for="f-name">Full Name</label>
+            <input type="text" id="f-name" placeholder="Your name" required autocomplete="name" />
+          </div>
+
+          <div class="form-group">
+            <label for="f-email">Email</label>
+            <input type="email" id="f-email" placeholder="your@email.com" required autocomplete="email" />
+          </div>
+
+          <div class="form-group">
+            <label for="f-address">Address</label>
+            <input type="text" id="f-address" placeholder="Street address" required autocomplete="street-address" />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-city">City</label>
+              <input type="text" id="f-city" placeholder="City" required autocomplete="address-level2" />
+            </div>
+            <div class="form-group">
+              <label for="f-postcode">Postcode</label>
+              <input type="text" id="f-postcode" placeholder="Postcode" required autocomplete="postal-code" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="f-country">Country</label>
+            <select id="f-country" required autocomplete="country">
+              <option value="" disabled selected>Select country</option>
+              <option>United Kingdom</option>
+              <option>Ireland</option>
+              <option>Norway</option>
+              <option>Sweden</option>
+              <option>Denmark</option>
+              <option>Netherlands</option>
+              <option>Belgium</option>
+              <option>Germany</option>
+              <option>France</option>
+              <option>Spain</option>
+              <option>Italy</option>
+              <option>Portugal</option>
+              <option>Poland</option>
+              <option>Australia</option>
+              <option>United States</option>
+              <option>Canada</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="f-notes">Order Notes <span class="optional">(optional)</span></label>
+            <textarea id="f-notes" placeholder="Anything we should know about your order?" rows="3"></textarea>
+          </div>
+
+          <button type="submit" class="btn-checkout" id="pay-btn">Pay with PayPal</button>
+          <p class="pay-note">You'll be redirected to PayPal to complete payment. Money goes straight to EXO.</p>
+        </form>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section" id="about">
+    <div class="about-inner">
+      <div class="about-visual">
+        <img
+          src="https://p16-common-sign.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/9b732c8af73f254067ed559afeccc30b~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=10399&refresh_token=f372d92f&x-expires=1791572400&x-signature=VEWg%2FB89JTWJaMDcdjWlRUCxYjA%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a"
+          alt="EXO"
+          class="about-img"
+        />
+      </div>
+      <div class="about-copy">
+        <span class="label-tag">About</span>
+        <h2 class="about-title">Built from<br>the streets.</h2>
+        <p>EXO makes scooter parts for riders who actually ride. Every product is designed with real use in mind — not just looks.</p>
+        <p>No filler, no fluff. Just parts that work.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <img
+      src="https://p16-common-sign.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/9b732c8af73f254067ed559afeccc30b~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=10399&refresh_token=f372d92f&x-expires=1791572400&x-signature=VEWg%2FB89JTWJaMDcdjWlRUCxYjA%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a"
+      alt="EXO"
+      class="footer-logo"
+    />
+    <p class="footer-name">EXO</p>
+    <p class="footer-small">© 2026 EXO. All rights reserved.</p>
+    <p class="footer-small">Payments via PayPal</p>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
