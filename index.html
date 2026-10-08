@@ -153,6 +153,42 @@
           </div>
         </div>
 
+        <!-- SCOOTER TYRE -->
+        <div class="product-card">
+          <div class="prod-img-wrap">
+            <img
+              src="tyre.jpg"
+              alt="EXO Scooter Tyre"
+              class="prod-img prod-img-white"
+              loading="lazy"
+              onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback')"
+            />
+          </div>
+          <div class="prod-body">
+            <div class="prod-top">
+              <h3 class="prod-name">Scooter Tyre</h3>
+            </div>
+            <p class="prod-desc">EXO scooter tyre — good grip on any surface. Solid rubber, 10x2 inch. Handles corners, wet roads and rough ground without sliding out.</p>
+            <div class="model-select-wrap">
+              <label class="model-label">Select your scooter</label>
+              <div class="model-options" id="tyre-model-options">
+                <button class="model-btn" onclick="selectTyreModel(this, 'G2')">G2</button>
+                <button class="model-btn" onclick="selectTyreModel(this, 'G3')">G3</button>
+                <button class="model-btn" onclick="selectTyreModel(this, 'G3 Pro')">G3 Pro</button>
+                <button class="model-btn" onclick="selectTyreModel(this, 'G4')">G4</button>
+                <button class="model-btn" onclick="selectTyreModel(this, 'G4 Ultra')">G4 Ultra</button>
+                <button class="model-btn" onclick="selectTyreModel(this, 'Joyor T10')">Joyor T10</button>
+                <button class="model-btn" onclick="selectTyreModel(this, 'Joyor S10')">Joyor S10</button>
+              </div>
+              <span class="model-error" id="tyre-model-error"></span>
+            </div>
+            <div class="prod-bottom">
+              <span class="prod-price">€40</span>
+              <button class="btn-cart" onclick="addTyreToCart()">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
         <!-- GUTS PLATE -->
         <div class="product-card">
           <div class="prod-img-wrap">

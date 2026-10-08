@@ -3,7 +3,7 @@
 // ======================
 
 const PAYPAL_EMAIL   = 'your-paypal@email.com'; // <-- your PayPal email
-const DISCOUNT_CODE  = 'BRAHIM';
+const DISCOUNT_CODES = ['BRAHIM', 'THOR'];
 const DISCOUNT_PCT   = 0.20; // 20%
 
 let cart            = [];
@@ -72,6 +72,43 @@ function selectModel(btn, model) {
   btn.classList.add('active');
   selectedModel = model;
   document.getElementById('model-error').textContent = '';
+}
+
+// ======================
+// TYRE MODEL SELECTOR
+// ======================
+let selectedTyreModel = null;
+
+function selectTyreModel(btn, model) {
+  if (btn.classList.contains('active')) {
+    btn.classList.remove('active');
+    selectedTyreModel = null;
+    return;
+  }
+  document.querySelectorAll('#tyre-model-options .model-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  selectedTyreModel = model;
+  document.getElementById('tyre-model-error').textContent = '';
+}
+
+// ======================
+// ADD TYRE TO CART
+// ======================
+function addTyreToCart() {
+  if (!selectedTyreModel) {
+    document.getElementById('tyre-model-error').textContent = 'Pick your scooter model first';
+    return;
+  }
+  const name     = `Scooter Tyre (${selectedTyreModel})`;
+  const existing = cart.find(i => i.name === name);
+  if (existing) {
+    existing.qty += 1;
+  } else {
+    cart.push({ name, price: 40, qty: 1 });
+  }
+  renderCart();
+  updateCartCount();
+  showToast(`Scooter Tyre (${selectedTyreModel}) added ✓`);
 }
 
 // ======================
@@ -180,7 +217,7 @@ function applyDiscount() {
   const val = document.getElementById('discount-input').value.trim().toUpperCase();
   const msg = document.getElementById('discount-msg');
 
-  if (val === DISCOUNT_CODE) {
+  if (DISCOUNT_CODES.includes(val)) {
     discountApplied = true;
     msg.textContent = '✓ Code applied — 20% off';
     msg.className   = 'discount-msg success';
