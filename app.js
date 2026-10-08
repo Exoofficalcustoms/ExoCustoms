@@ -3,7 +3,7 @@
 // ======================
 
 const PAYPAL_EMAIL   = 'your-paypal@email.com'; // <-- your PayPal email
-const DISCOUNT_CODES = ['BRAHIM', 'THOR'];
+const DISCOUNT_CODES = ['BRAHIM', 'THOR', 'JOYRIDER'];
 const DISCOUNT_PCT   = 0.20; // 20%
 
 let cart            = [];
