@@ -296,6 +296,86 @@ function submitOrder(e) {
 }
 
 // ======================
+// HANDLEBAR COLOUR SELECTOR
+// ======================
+let selectedHandlebarColour = null;
+
+function selectHandlebarColour(btn, colour) {
+  if (btn.classList.contains('active')) {
+    btn.classList.remove('active');
+    selectedHandlebarColour = null;
+    return;
+  }
+  document.querySelectorAll('#handlebar-colour-options .model-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  selectedHandlebarColour = colour;
+  document.getElementById('handlebar-error').textContent = '';
+}
+
+function addHandlebarToCart() {
+  if (!selectedHandlebarColour) {
+    document.getElementById('handlebar-error').textContent = 'Pick a colour first';
+    return;
+  }
+  const name     = `Pro Taper Handlebars (${selectedHandlebarColour})`;
+  const existing = cart.find(i => i.name === name);
+  if (existing) {
+    existing.qty += 1;
+  } else {
+    cart.push({ name, price: 95, qty: 1 });
+  }
+  renderCart();
+  updateCartCount();
+  showToast(`Pro Taper Handlebars (${selectedHandlebarColour}) added ✓`);
+}
+
+// ======================
+// 2000W BUNDLE SELECTORS
+// ======================
+let bundle2WheelSize = null;
+let bundle2Battery   = null;
+
+function selectBundle2Wheel(btn, size) {
+  if (btn.classList.contains('active')) {
+    btn.classList.remove('active');
+    bundle2WheelSize = null;
+    return;
+  }
+  document.querySelectorAll('#bundle2-wheel-options .model-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  bundle2WheelSize = size;
+  document.getElementById('bundle2-error').textContent = '';
+}
+
+function selectBundle2Battery(btn, bat) {
+  if (btn.classList.contains('active')) {
+    btn.classList.remove('active');
+    bundle2Battery = null;
+    return;
+  }
+  document.querySelectorAll('#bundle2-battery-options .model-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  bundle2Battery = bat;
+  document.getElementById('bundle2-error').textContent = '';
+}
+
+function addBundle2ToCart() {
+  const err = document.getElementById('bundle2-error');
+  if (!bundle2WheelSize) { err.textContent = 'Select a wheel size first'; return; }
+  if (!bundle2Battery)   { err.textContent = 'Select a battery size first'; return; }
+  const name     = `2000W Conversion Bundle (${bundle2WheelSize}" / ${bundle2Battery})`;
+  const existing = cart.find(i => i.name === name);
+  if (existing) {
+    existing.qty += 1;
+  } else {
+    cart.push({ name, price: 850, qty: 1 });
+  }
+  renderCart();
+  updateCartCount();
+  showToast(`2000W Bundle added ✓`);
+}
+
+// ======================
 // CONVERSION BUNDLE SELECTORS
 // ======================
 let bundleWheelSize = null;

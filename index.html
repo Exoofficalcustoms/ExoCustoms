@@ -191,6 +191,41 @@
           </div>
         </div>
 
+        <!-- PRO TAPER HANDLEBARS -->
+        <div class="product-card">
+          <div class="prod-img-wrap">
+            <img
+              src="protaper.png"
+              alt="Pro Taper Handlebars"
+              class="prod-img prod-img-white"
+              loading="lazy"
+              onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback')"
+            />
+          </div>
+          <div class="prod-body">
+            <div class="prod-top">
+              <h3 class="prod-name">Pro Taper Handlebars</h3>
+            </div>
+            <p class="prod-desc">EXO Pro Taper handlebars — strong, lightweight and built for control. Clean look, solid feel, direct response every time.</p>
+            <div class="model-select-wrap">
+              <label class="model-label">Colour</label>
+              <div class="model-options" id="handlebar-colour-options">
+                <button class="model-btn" onclick="selectHandlebarColour(this, 'Red')">Red</button>
+                <button class="model-btn" onclick="selectHandlebarColour(this, 'Blue')">Blue</button>
+                <button class="model-btn" onclick="selectHandlebarColour(this, 'Yellow')">Yellow</button>
+                <button class="model-btn" onclick="selectHandlebarColour(this, 'Black')">Black</button>
+                <button class="model-btn" onclick="selectHandlebarColour(this, 'Silver')">Silver</button>
+                <button class="model-btn" onclick="selectHandlebarColour(this, 'Gold')">Gold</button>
+              </div>
+              <span class="model-error" id="handlebar-error"></span>
+            </div>
+            <div class="prod-bottom">
+              <span class="prod-price">€95</span>
+              <button class="btn-cart" onclick="addHandlebarToCart()">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
         <!-- GUTS PLATE -->
         <div class="product-card">
           <div class="prod-img-wrap">
@@ -395,11 +430,87 @@
           </div>
         </div>
 
+        <!-- 2000W CONVERSION BUNDLE -->
+        <div class="product-card bundle-card">
+          <div class="prod-img-wrap">
+            <img
+              src="2000w.png"
+              alt="2000W Electric Conversion Bundle"
+              class="prod-img prod-img-white"
+              loading="lazy"
+              onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback')"
+            />
+          </div>
+          <div class="prod-body">
+            <div class="prod-top">
+              <h3 class="prod-name">2000W Conversion Bundle</h3>
+            </div>
+
+            <!-- Specs -->
+            <div class="bundle-specs">
+              <div class="spec-row"><span class="spec-label">Motor</span><span class="spec-val">2000W Brushless Rear Hub Motor</span></div>
+              <div class="spec-row"><span class="spec-label">Top Speed</span><span class="spec-val">Up to 70 km/h (43 mph)</span></div>
+              <div class="spec-row"><span class="spec-label">Battery</span><span class="spec-val">52V Lithium</span></div>
+              <div class="spec-row"><span class="spec-label">Torque</span><span class="spec-val">High-torque — rapid acceleration &amp; hill climbing</span></div>
+            </div>
+
+            <!-- What's included -->
+            <div class="bundle-includes">
+              <p class="bundle-inc-title">What's included</p>
+              <ul class="bundle-inc-list">
+                <li>2000W Rear Hub Motor — pre-laced into a heavy-duty rim</li>
+
+                <li>High-Performance Controller</li>
+
+                <li>LCD Display</li>
+
+                <li>Thumb or Twist Throttle</li>
+
+                <li>Pedal Assist Sensor (PAS)</li>
+
+                <li>Brake Levers with Motor Cut-Off</li>
+
+                <li>Dual Reinforced Torque Arms</li>
+
+                <li>All required wiring and installation hardware</li>
+
+                <li>52V Lithium Battery (capacity chosen at checkout)</li>
+
+                <li>Battery Charger</li>
+              </ul>
+            </div>
+
+            <!-- Wheel size -->
+            <div class="model-select-wrap">
+              <label class="model-label">Wheel Size</label>
+              <div class="model-options" id="bundle2-wheel-options">
+                <button class="model-btn" onclick="selectBundle2Wheel(this, '26')">26"</button>
+                <button class="model-btn" onclick="selectBundle2Wheel(this, '27.5')">27.5"</button>
+                <button class="model-btn" onclick="selectBundle2Wheel(this, '29')">29"</button>
+              </div>
+            </div>
+
+            <!-- Battery size -->
+            <div class="model-select-wrap">
+              <label class="model-label">Battery Capacity</label>
+              <div class="model-options" id="bundle2-battery-options">
+                <button class="model-btn" onclick="selectBundle2Battery(this, '20Ah')">20Ah</button>
+                <button class="model-btn" onclick="selectBundle2Battery(this, '25Ah')">25Ah</button>
+                <button class="model-btn" onclick="selectBundle2Battery(this, '30Ah')">30Ah</button>
+              </div>
+              <span class="model-error" id="bundle2-error"></span>
+            </div>
+
+            <div class="prod-bottom">
+              <span class="prod-price">€850</span>
+              <button class="btn-cart" onclick="addBundle2ToCart()">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
-
-  <!-- =================== TAB: ABOUT =================== -->
   <div class="tab-page" id="tab-about">
     <div class="page-inner about-page">
       <div class="about-inner">
