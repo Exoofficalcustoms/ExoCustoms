@@ -22,6 +22,7 @@
         <li><a href="#" class="nav-tab active" data-tab="home" onclick="showTab('home')">Home</a></li>
         <li><a href="#" class="nav-tab" data-tab="shop" onclick="showTab('shop')">Shop</a></li>
         <li><a href="#" class="nav-tab" data-tab="cart" onclick="showTab('cart')">Cart <span class="cart-bubble" id="cart-count">0</span></a></li>
+        <li><a href="#" class="nav-tab" data-tab="batteries" onclick="showTab('batteries')">Batteries</a></li>
         <li><a href="#" class="nav-tab" data-tab="bundles" onclick="showTab('bundles')">Bundles</a></li>
         <li><a href="#" class="nav-tab" data-tab="about" onclick="showTab('about')">About</a></li>
       </ul>
@@ -37,6 +38,7 @@
       <a href="#" onclick="showTab('home')">Home</a>
       <a href="#" onclick="showTab('shop')">Shop</a>
       <a href="#" onclick="showTab('cart')">Cart <span class="cart-bubble-mob" id="cart-count-mob">0</span></a>
+      <a href="#" onclick="showTab('batteries')">Batteries</a>
       <a href="#" onclick="showTab('bundles')">Bundles</a>
       <a href="#" onclick="showTab('about')">About</a>
     </div>
@@ -345,6 +347,67 @@
             <button type="submit" class="btn-checkout">Pay with PayPal</button>
             <p class="pay-note">You'll be sent to PayPal to complete payment. Money goes straight to EXO.</p>
           </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- =================== TAB: BATTERIES =================== -->
+  <div class="tab-page" id="tab-batteries">
+    <div class="page-inner">
+      <div class="page-header">
+        <span class="label-tag">Power Up</span>
+        <h2 class="page-title">Batteries</h2>
+        <p class="page-sub">High-capacity lithium batteries built for e-scooters. More range, more power.</p>
+      </div>
+
+      <div class="products-grid">
+
+        <!-- 48V BATTERY -->
+        <div class="product-card">
+          <div class="prod-img-wrap">
+            <img
+              src="48.png"
+              alt="48V 18Ah E-Scooter Battery"
+              class="prod-img prod-img-white"
+              loading="lazy"
+              onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback')"
+            />
+          </div>
+          <div class="prod-body">
+            <div class="prod-top">
+              <h3 class="prod-name">48V Battery</h3>
+            </div>
+            <p class="prod-desc">48 Volt 18Ah lithium battery built for e-scooters. Reliable power, long range, easy to fit. Keeps your ride going further and faster. Compatible with most 48V e-scooter systems.</p>
+            <div class="prod-bottom">
+              <span class="prod-price">€80</span>
+              <button class="btn-cart" onclick="addToCart('48V 18Ah Battery', 80)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 54V BATTERY -->
+        <div class="product-card">
+          <div class="prod-img-wrap">
+            <img
+              src="54.png"
+              alt="54V 30Ah E-Scooter Battery"
+              class="prod-img prod-img-white"
+              loading="lazy"
+              onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback')"
+            />
+          </div>
+          <div class="prod-body">
+            <div class="prod-top">
+              <h3 class="prod-name">54V Battery</h3>
+            </div>
+            <p class="prod-desc">54 Volt 30Ah lithium battery built for e-scooters. High capacity, extended range and serious power delivery. Built to handle heavy use and keep up with the most demanding setups.</p>
+            <div class="prod-bottom">
+              <span class="prod-price">€190</span>
+              <button class="btn-cart" onclick="addToCart('54V 30Ah Battery', 190)">Add to Cart</button>
+            </div>
+          </div>
         </div>
 
       </div>
