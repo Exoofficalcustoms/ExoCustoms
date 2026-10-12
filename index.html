@@ -228,6 +228,44 @@
           </div>
         </div>
 
+        <!-- SPACERS -->
+        <div class="product-card">
+          <div class="prod-img-wrap">
+            <img
+              src="cool.png"
+              alt="EXO Scooter Spacers"
+              class="prod-img prod-img-white"
+              loading="lazy"
+              onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback')"
+            />
+          </div>
+          <div class="prod-body">
+            <div class="prod-top">
+              <h3 class="prod-name">Spacers</h3>
+            </div>
+            <p class="prod-desc">EXO spacers — 10 pieces per pack. Clean up your wheel setup and add a pop of colour at the same time. Fits most pro scooter wheels.</p>
+            <div class="model-select-wrap">
+              <label class="model-label">Colour</label>
+              <div class="model-options" id="spacer-colour-options">
+                <button class="model-btn" onclick="selectSpacerColour(this, 'Red')">Red</button>
+                <button class="model-btn" onclick="selectSpacerColour(this, 'Black')">Black</button>
+                <button class="model-btn" onclick="selectSpacerColour(this, 'White')">White</button>
+                <button class="model-btn" onclick="selectSpacerColour(this, 'Purple')">Purple</button>
+                <button class="model-btn" onclick="selectSpacerColour(this, 'Pink')">Pink</button>
+                <button class="model-btn" onclick="selectSpacerColour(this, 'Yellow')">Yellow</button>
+                <button class="model-btn" onclick="selectSpacerColour(this, 'Orange')">Orange</button>
+                <button class="model-btn" onclick="selectSpacerColour(this, 'Blue')">Blue</button>
+                <button class="model-btn" onclick="selectSpacerColour(this, 'Green')">Green</button>
+              </div>
+              <span class="model-error" id="spacer-error"></span>
+            </div>
+            <div class="prod-bottom">
+              <span class="prod-price">€10</span>
+              <button class="btn-cart" onclick="addSpacerToCart()">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
         <!-- GUTS PLATE -->
         <div class="product-card">
           <div class="prod-img-wrap">

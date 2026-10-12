@@ -3,7 +3,7 @@
 // ======================
 
 const PAYPAL_EMAIL   = 'your-paypal@email.com'; // <-- your PayPal email
-const DISCOUNT_CODES = ['BRAHIM', 'THOR', 'JOYRIDER', 'ZENZIRL'];
+const DISCOUNT_CODES = ['BRAHIM', 'THOR', 'JOYRIDER', 'ZENZIRL', 'WBG4'];
 const DISCOUNT_PCT   = 0.20; // 20%
 
 let cart            = [];
@@ -293,6 +293,40 @@ function submitOrder(e) {
 
   showToast(`Going to PayPal — €${total}`);
   setTimeout(() => window.open(url, '_blank'), 700);
+}
+
+// ======================
+// SPACER COLOUR SELECTOR
+// ======================
+let selectedSpacerColour = null;
+
+function selectSpacerColour(btn, colour) {
+  if (btn.classList.contains('active')) {
+    btn.classList.remove('active');
+    selectedSpacerColour = null;
+    return;
+  }
+  document.querySelectorAll('#spacer-colour-options .model-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  selectedSpacerColour = colour;
+  document.getElementById('spacer-error').textContent = '';
+}
+
+function addSpacerToCart() {
+  if (!selectedSpacerColour) {
+    document.getElementById('spacer-error').textContent = 'Pick a colour first';
+    return;
+  }
+  const name     = `Spacers — 10pk (${selectedSpacerColour})`;
+  const existing = cart.find(i => i.name === name);
+  if (existing) {
+    existing.qty += 1;
+  } else {
+    cart.push({ name, price: 10, qty: 1 });
+  }
+  renderCart();
+  updateCartCount();
+  showToast(`Spacers (${selectedSpacerColour}) added ✓`);
 }
 
 // ======================
