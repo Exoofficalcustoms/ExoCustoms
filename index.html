@@ -22,6 +22,7 @@
         <li><a href="#" class="nav-tab active" data-tab="home" onclick="showTab('home')">Home</a></li>
         <li><a href="#" class="nav-tab" data-tab="shop" onclick="showTab('shop')">Shop</a></li>
         <li><a href="#" class="nav-tab" data-tab="cart" onclick="showTab('cart')">Cart <span class="cart-bubble" id="cart-count">0</span></a></li>
+        <li><a href="#" class="nav-tab" data-tab="bundles" onclick="showTab('bundles')">Bundles</a></li>
         <li><a href="#" class="nav-tab" data-tab="about" onclick="showTab('about')">About</a></li>
       </ul>
 
@@ -36,6 +37,7 @@
       <a href="#" onclick="showTab('home')">Home</a>
       <a href="#" onclick="showTab('shop')">Shop</a>
       <a href="#" onclick="showTab('cart')">Cart <span class="cart-bubble-mob" id="cart-count-mob">0</span></a>
+      <a href="#" onclick="showTab('bundles')">Bundles</a>
       <a href="#" onclick="showTab('about')">About</a>
     </div>
   </nav>
@@ -308,6 +310,89 @@
             <button type="submit" class="btn-checkout">Pay with PayPal</button>
             <p class="pay-note">You'll be sent to PayPal to complete payment. Money goes straight to EXO.</p>
           </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- =================== TAB: BUNDLES =================== -->
+  <div class="tab-page" id="tab-bundles">
+    <div class="page-inner">
+      <div class="page-header">
+        <span class="label-tag">Conversion Bundles</span>
+        <h2 class="page-title">Bundles</h2>
+        <p class="page-sub">Everything you need to convert your bike to electric — in one box.</p>
+      </div>
+
+      <div class="products-grid" style="grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));">
+
+        <!-- 1000W CONVERSION BUNDLE -->
+        <div class="product-card bundle-card">
+          <div class="prod-img-wrap">
+            <img
+              src="1000w.png"
+              alt="1000W Electric Conversion Bundle"
+              class="prod-img prod-img-white"
+              loading="lazy"
+              onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback')"
+            />
+          </div>
+          <div class="prod-body">
+            <div class="prod-top">
+              <h3 class="prod-name">1000W Conversion Bundle</h3>
+            </div>
+
+            <!-- Specs -->
+            <div class="bundle-specs">
+              <div class="spec-row"><span class="spec-label">Motor</span><span class="spec-val">1000W Rear Hub Motor</span></div>
+              <div class="spec-row"><span class="spec-label">Top Speed</span><span class="spec-val">55 km/h</span></div>
+              <div class="spec-row"><span class="spec-label">Battery</span><span class="spec-val">48V Lithium</span></div>
+            </div>
+
+            <!-- Whats included -->
+            <div class="bundle-includes">
+              <p class="bundle-inc-title">What's included</p>
+              <ul class="bundle-inc-list">
+                <li>1000W Rear Hub Motor — pre-laced into a heavy-duty rim</li>
+                <li>High-Performance Controller</li>
+                <li>LCD Display</li>
+                <li>Thumb or Twist Throttle</li>
+                <li>Pedal Assist Sensor (PAS)</li>
+                <li>Brake Levers with Motor Cut-Off</li>
+                <li>Dual Reinforced Torque Arms</li>
+                <li>All required wiring and installation hardware</li>
+                <li>48V Lithium Battery</li>
+                <li>Battery Charger</li>
+              </ul>
+            </div>
+
+            <!-- Wheel size -->
+            <div class="model-select-wrap">
+              <label class="model-label">Wheel Size</label>
+              <div class="model-options" id="bundle-wheel-options">
+                <button class="model-btn" onclick="selectBundleWheel(this, '26')">26"</button>
+                <button class="model-btn" onclick="selectBundleWheel(this, '27.5')">27.5"</button>
+                <button class="model-btn" onclick="selectBundleWheel(this, '29')">29"</button>
+              </div>
+            </div>
+
+            <!-- Battery size -->
+            <div class="model-select-wrap">
+              <label class="model-label">Battery Capacity</label>
+              <div class="model-options" id="bundle-battery-options">
+                <button class="model-btn" onclick="selectBundleBattery(this, '20Ah')">20Ah</button>
+                <button class="model-btn" onclick="selectBundleBattery(this, '25Ah')">25Ah</button>
+                <button class="model-btn" onclick="selectBundleBattery(this, '30Ah')">30Ah</button>
+              </div>
+              <span class="model-error" id="bundle-error"></span>
+            </div>
+
+            <div class="prod-bottom">
+              <span class="prod-price">€560</span>
+              <button class="btn-cart" onclick="addBundleToCart()">Add to Cart</button>
+            </div>
+          </div>
         </div>
 
       </div>

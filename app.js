@@ -3,7 +3,7 @@
 // ======================
 
 const PAYPAL_EMAIL   = 'your-paypal@email.com'; // <-- your PayPal email
-const DISCOUNT_CODES = ['BRAHIM', 'THOR', 'JOYRIDER'];
+const DISCOUNT_CODES = ['BRAHIM', 'THOR', 'JOYRIDER', 'ZENZIRL'];
 const DISCOUNT_PCT   = 0.20; // 20%
 
 let cart            = [];
@@ -293,6 +293,52 @@ function submitOrder(e) {
 
   showToast(`Going to PayPal — €${total}`);
   setTimeout(() => window.open(url, '_blank'), 700);
+}
+
+// ======================
+// CONVERSION BUNDLE SELECTORS
+// ======================
+let bundleWheelSize = null;
+let bundleBattery   = null;
+
+function selectBundleWheel(btn, size) {
+  if (btn.classList.contains('active')) {
+    btn.classList.remove('active');
+    bundleWheelSize = null;
+    return;
+  }
+  document.querySelectorAll('#bundle-wheel-options .model-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  bundleWheelSize = size;
+  document.getElementById('bundle-error').textContent = '';
+}
+
+function selectBundleBattery(btn, bat) {
+  if (btn.classList.contains('active')) {
+    btn.classList.remove('active');
+    bundleBattery = null;
+    return;
+  }
+  document.querySelectorAll('#bundle-battery-options .model-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  bundleBattery = bat;
+  document.getElementById('bundle-error').textContent = '';
+}
+
+function addBundleToCart() {
+  const err = document.getElementById('bundle-error');
+  if (!bundleWheelSize) { err.textContent = 'Select a wheel size first'; return; }
+  if (!bundleBattery)   { err.textContent = 'Select a battery size first'; return; }
+  const name     = `1000W Conversion Bundle (${bundleWheelSize}" / ${bundleBattery})`;
+  const existing = cart.find(i => i.name === name);
+  if (existing) {
+    existing.qty += 1;
+  } else {
+    cart.push({ name, price: 560, qty: 1 });
+  }
+  renderCart();
+  updateCartCount();
+  showToast(`Bundle added ✓`);
 }
 
 // ======================

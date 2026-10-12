@@ -964,6 +964,78 @@ a { text-decoration: none; }
 .toast.show { opacity: 1; transform: translateY(0); }
 
 /* =========================
+   BUNDLE CARD
+   ========================= */
+.bundle-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 12px 14px;
+  margin: 4px 0;
+}
+
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  letter-spacing: 1px;
+}
+
+.spec-label {
+  color: var(--off);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+}
+
+.spec-val {
+  color: var(--accent);
+  font-family: var(--font-h);
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 1px;
+}
+
+.bundle-includes { margin: 4px 0; }
+
+.bundle-inc-title {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--off);
+  margin-bottom: 7px;
+}
+
+.bundle-inc-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.bundle-inc-list li {
+  font-size: 0.82rem;
+  color: var(--off);
+  padding-left: 14px;
+  position: relative;
+  line-height: 1.4;
+}
+
+.bundle-inc-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* =========================
    RESPONSIVE
    ========================= */
 @media (max-width: 900px) {
