@@ -22,6 +22,8 @@
         <li><a href="#" class="nav-tab active" data-tab="home" onclick="showTab('home')">Home</a></li>
         <li><a href="#" class="nav-tab" data-tab="shop" onclick="showTab('shop')">Shop</a></li>
         <li><a href="#" class="nav-tab" data-tab="cart" onclick="showTab('cart')">Cart <span class="cart-bubble" id="cart-count">0</span></a></li>
+        <li><a href="#" class="nav-tab" data-tab="motors" onclick="showTab('motors')">Motors</a></li>
+        <li><a href="#" class="nav-tab" data-tab="suspension" onclick="showTab('suspension')">Suspension</a></li>
         <li><a href="#" class="nav-tab" data-tab="batteries" onclick="showTab('batteries')">Batteries</a></li>
         <li><a href="#" class="nav-tab" data-tab="bundles" onclick="showTab('bundles')">Bundles</a></li>
         <li><a href="#" class="nav-tab" data-tab="about" onclick="showTab('about')">About</a></li>
@@ -38,6 +40,8 @@
       <a href="#" onclick="showTab('home')">Home</a>
       <a href="#" onclick="showTab('shop')">Shop</a>
       <a href="#" onclick="showTab('cart')">Cart <span class="cart-bubble-mob" id="cart-count-mob">0</span></a>
+      <a href="#" onclick="showTab('motors')">Motors</a>
+      <a href="#" onclick="showTab('suspension')">Suspension</a>
       <a href="#" onclick="showTab('batteries')">Batteries</a>
       <a href="#" onclick="showTab('bundles')">Bundles</a>
       <a href="#" onclick="showTab('about')">About</a>
@@ -96,7 +100,41 @@
       <div class="page-header">
         <span class="label-tag">The Drop</span>
         <h2 class="page-title">Shop</h2>
-        <p class="page-sub">Add to cart then head to the cart tab to check out.</p>
+        <p class="page-sub">Browse by category or scroll through everything below.</p>
+      </div>
+
+      <!-- CATEGORY PICKER -->
+      <div class="category-grid">
+        <button class="cat-card" onclick="showTab('shop'); document.getElementById('shop-products').scrollIntoView({behavior:'smooth'})">
+          <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="19" r="2"/><path d="M2 3h2l2.5 11h9l2-7H7"/></svg>
+          <span class="cat-name">Accessories</span>
+        </button>
+        <button class="cat-card" onclick="showTab('motors')">
+          <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
+          <span class="cat-name">Motors</span>
+        </button>
+        <button class="cat-card" onclick="showTab('batteries')">
+          <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="16" height="10" rx="2"/><path d="M22 11v2"/><path d="M7 11v2M11 11v2"/></svg>
+          <span class="cat-name">Batteries</span>
+        </button>
+        <button class="cat-card" onclick="showTab('bundles')">
+          <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          <span class="cat-name">Bundles</span>
+        </button>
+        <button class="cat-card" onclick="showTab('shop'); document.getElementById('shop-products').scrollIntoView({behavior:'smooth'})">
+          <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
+          <span class="cat-name">Brakes</span>
+        </button>
+        <button class="cat-card" onclick="showTab('suspension')">
+          <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="8"/><line x1="12" y1="16" x2="12" y2="22"/><path d="M8 8h8M8 16h8"/><path d="M9 8c0 1.5-.5 3-2 4s-2 2.5-2 4"/><path d="M15 8c0 1.5.5 3 2 4s2 2.5 2 4"/></svg>
+          <span class="cat-name">Suspension</span>
+        </button>
+      </div>
+
+      <div id="shop-products">
+      <div class="page-header" style="margin-top:52px; margin-bottom:28px;">
+        <span class="label-tag">All Products</span>
+        <h2 class="page-title" style="font-size:clamp(2rem,5vw,3.5rem);">Accessories</h2>
       </div>
 
       <div class="products-grid">
@@ -128,7 +166,7 @@
               <span class="model-error" id="model-error"></span>
             </div>
             <div class="prod-bottom">
-              <span class="prod-price">€65</span>
+              <span class="prod-price">€80</span>
               <button class="btn-cart" onclick="addToCartWithModel()">Add to Cart</button>
             </div>
           </div>
@@ -151,8 +189,8 @@
             </div>
             <p class="prod-desc">EXO hydraulic brakes — lever and caliper set. One finger pull, instant bite. Way better than cable, way cleaner looking too.</p>
             <div class="prod-bottom">
-              <span class="prod-price">€60</span>
-              <button class="btn-cart" onclick="addToCart('Hydraulic Brakes', 60)">Add to Cart</button>
+              <span class="prod-price">€75</span>
+              <button class="btn-cart" onclick="addToCart('Hydraulic Brakes', 75)">Add to Cart</button>
             </div>
           </div>
         </div>
@@ -289,7 +327,8 @@
           </div>
         </div>
 
-      </div>
+      </div><!-- /products-grid -->
+      </div><!-- /shop-products -->
     </div>
   </div>
 
@@ -391,6 +430,164 @@
     </div>
   </div>
 
+  <!-- =================== TAB: MOTORS =================== -->
+  <div class="tab-page" id="tab-motors">
+    <div class="page-inner">
+      <div class="page-header">
+        <span class="label-tag">Electric Motors</span>
+        <h2 class="page-title">Motors</h2>
+        <p class="page-sub">Plug-and-play hub motors for e-scooter upgrades and builds.</p>
+      </div>
+
+      <div class="products-grid">
+
+        <!-- 500W MOTOR -->
+        <div class="product-card">
+          <div class="prod-img-wrap">
+            <img
+              src="motor4.png"
+              alt="500W E-Scooter Motor"
+              class="prod-img prod-img-white"
+              loading="lazy"
+              onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback')"
+            />
+          </div>
+          <div class="prod-body">
+            <div class="prod-top">
+              <h3 class="prod-name">500W Motor</h3>
+            </div>
+            <div class="bundle-specs">
+              <div class="spec-row"><span class="spec-label">Power</span><span class="spec-val">500W (Peak 800W)</span></div>
+              <div class="spec-row"><span class="spec-label">Voltage</span><span class="spec-val">36V / 42V / 48V</span></div>
+            </div>
+            <p class="prod-desc">Powerful 500W hub motor with a peak output of 800W. Fits the Xiaomi S1 Max, all Xiaomi models, Ninebot series, Kugoo, Kaabo and more. Drop-in upgrade, no major modifications needed.</p>
+            <div class="prod-bottom">
+              <span class="prod-price">€200</span>
+              <button class="btn-cart" onclick="addToCart('500W Motor (Peak 800W)', 200)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 750W MOTOR -->
+        <div class="product-card">
+          <div class="prod-img-wrap">
+            <img
+              src="motor43.png"
+              alt="750W E-Scooter Motor"
+              class="prod-img prod-img-white"
+              loading="lazy"
+              onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback')"
+            />
+          </div>
+          <div class="prod-body">
+            <div class="prod-top">
+              <h3 class="prod-name">750W Motor</h3>
+            </div>
+            <div class="bundle-specs">
+              <div class="spec-row"><span class="spec-label">Power</span><span class="spec-val">750W (Peak 1000W)</span></div>
+              <div class="spec-row"><span class="spec-label">Voltage</span><span class="spec-val">36V / 42V / 48V / 54V</span></div>
+            </div>
+            <p class="prod-desc">High-performance 750W hub motor with wide voltage compatibility. More torque, faster acceleration and better hill climbing than standard motors. Works across a wide range of e-scooter platforms.</p>
+            <div class="prod-bottom">
+              <span class="prod-price">€260</span>
+              <button class="btn-cart" onclick="addToCart('750W Motor', 260)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 1200W MOTOR -->
+        <div class="product-card">
+          <div class="prod-img-wrap">
+            <img
+              src="1200wmotor.png"
+              alt="1200W E-Scooter Motor"
+              class="prod-img prod-img-white"
+              loading="lazy"
+              onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback')"
+            />
+          </div>
+          <div class="prod-body">
+            <div class="prod-top">
+              <h3 class="prod-name">1200W Motor</h3>
+            </div>
+            <div class="bundle-specs">
+              <div class="spec-row"><span class="spec-label">Power</span><span class="spec-val">1200W (Peak 1600W)</span></div>
+              <div class="spec-row"><span class="spec-label">Wheel</span><span class="spec-val">12 Inch</span></div>
+              <div class="spec-row"><span class="spec-label">Voltage</span><span class="spec-val">48V / 54V / 60V</span></div>
+            </div>
+            <p class="prod-desc">High-powered 1200W hub motor with a peak of 1600W. Built for 12 inch wheels. Wide voltage range — runs on 48V, 54V and 60V systems. Serious torque, fast acceleration and built to last.</p>
+            <div class="prod-bottom">
+              <span class="prod-price">€320</span>
+              <button class="btn-cart" onclick="addToCart('1200W Motor (Peak 1600W)', 320)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- =================== TAB: SUSPENSION =================== -->
+  <div class="tab-page" id="tab-suspension">
+    <div class="page-inner">
+      <div class="page-header">
+        <span class="label-tag">Suspension</span>
+        <h2 class="page-title">Suspension</h2>
+        <p class="page-sub">Upgrade your ride comfort and control with EXO suspension parts.</p>
+      </div>
+
+      <div class="products-grid">
+
+        <!-- REAR SHOCKS -->
+        <div class="product-card">
+          <div class="prod-img-wrap">
+            <img
+              src="back.png"
+              alt="EXO Rear Shock Absorbers"
+              class="prod-img prod-img-white"
+              loading="lazy"
+              onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback')"
+            />
+          </div>
+          <div class="prod-body">
+            <div class="prod-top">
+              <h3 class="prod-name">Rear Shocks</h3>
+            </div>
+            <p class="prod-desc">EXO rear shock absorbers — pack of 2. Smoother ride, better handling and more control over bumps and rough ground. Compatible with Kugoo G2, G3, G3 Pro, G4, G4 Ultra, G2 Ultra, Xiaomi S1 Max, M4 Max, A1 and many more e-scooters.</p>
+            <div class="prod-bottom">
+              <span class="prod-price">€70</span>
+              <button class="btn-cart" onclick="addToCart('Rear Shocks x2', 70)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- FRONT SUSPENSION FORK -->
+        <div class="product-card">
+          <div class="prod-img-wrap">
+            <img
+              src="frontsus.png"
+              alt="EXO Front Suspension Fork"
+              class="prod-img prod-img-white"
+              loading="lazy"
+              onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback')"
+            />
+          </div>
+          <div class="prod-body">
+            <div class="prod-top">
+              <h3 class="prod-name">Front Fork</h3>
+            </div>
+            <p class="prod-desc">EXO front suspension fork — absorbs impacts before they reach you. Noticeably smoother over cracks, kerbs and rough roads. Upgrade from a rigid fork and feel the difference straight away.</p>
+            <div class="prod-bottom">
+              <span class="prod-price">€50</span>
+              <button class="btn-cart" onclick="addToCart('Front Suspension Fork', 50)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
   <!-- =================== TAB: BATTERIES =================== -->
   <div class="tab-page" id="tab-batteries">
     <div class="page-inner">
@@ -401,6 +598,29 @@
       </div>
 
       <div class="products-grid">
+
+        <!-- 36V BATTERY -->
+        <div class="product-card">
+          <div class="prod-img-wrap">
+            <img
+              src="36.png"
+              alt="36V E-Scooter Battery"
+              class="prod-img prod-img-white"
+              loading="lazy"
+              onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback')"
+            />
+          </div>
+          <div class="prod-body">
+            <div class="prod-top">
+              <h3 class="prod-name">36V Battery</h3>
+            </div>
+            <p class="prod-desc">36 Volt lithium battery built for e-scooters. Reliable, lightweight and easy to fit. Compatible with most 36V e-scooter systems. A solid upgrade or replacement for your existing battery.</p>
+            <div class="prod-bottom">
+              <span class="prod-price">€65</span>
+              <button class="btn-cart" onclick="addToCart('36V Battery', 65)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
 
         <!-- 48V BATTERY -->
         <div class="product-card">

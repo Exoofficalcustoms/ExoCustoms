@@ -3,7 +3,7 @@
 // ======================
 
 const PAYPAL_EMAIL   = 'your-paypal@email.com'; // <-- your PayPal email
-const DISCOUNT_CODES = ['BRAHIM', 'THOR', 'JOYRIDER', 'ZENZIRL', 'WBG4'];
+const DISCOUNT_CODES = ['BRAHIM', 'THOR', 'JOYRIDER', 'ZENZIRL', 'WBG4', 'KACEK'];
 const DISCOUNT_PCT   = 0.20; // 20%
 
 let cart            = [];
@@ -293,6 +293,40 @@ function submitOrder(e) {
 
   showToast(`Going to PayPal — €${total}`);
   setTimeout(() => window.open(url, '_blank'), 700);
+}
+
+// ======================
+// REAR SHOCK MODEL SELECTOR
+// ======================
+let selectedRearShockModel = null;
+
+function selectRearShockModel(btn, model) {
+  if (btn.classList.contains('active')) {
+    btn.classList.remove('active');
+    selectedRearShockModel = null;
+    return;
+  }
+  document.querySelectorAll('#rearshock-model-options .model-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  selectedRearShockModel = model;
+  document.getElementById('rearshock-error').textContent = '';
+}
+
+function addRearShockToCart() {
+  if (!selectedRearShockModel) {
+    document.getElementById('rearshock-error').textContent = 'Pick your scooter model first';
+    return;
+  }
+  const name     = `Rear Shocks x2 (${selectedRearShockModel})`;
+  const existing = cart.find(i => i.name === name);
+  if (existing) {
+    existing.qty += 1;
+  } else {
+    cart.push({ name, price: 70, qty: 1 });
+  }
+  renderCart();
+  updateCartCount();
+  showToast(`Rear Shocks (${selectedRearShockModel}) added ✓`);
 }
 
 // ======================
