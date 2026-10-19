@@ -296,6 +296,40 @@ function submitOrder(e) {
 }
 
 // ======================
+// AUSOM WHEELIE BAR SELECTOR
+// ======================
+let selectedAusomModel = null;
+
+function selectAusomModel(btn, model) {
+  if (btn.classList.contains('active')) {
+    btn.classList.remove('active');
+    selectedAusomModel = null;
+    return;
+  }
+  document.querySelectorAll('#ausom-model-options .model-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  selectedAusomModel = model;
+  document.getElementById('ausom-error').textContent = '';
+}
+
+function addAusomToCart() {
+  if (!selectedAusomModel) {
+    document.getElementById('ausom-error').textContent = 'Pick your scooter model first';
+    return;
+  }
+  const name     = `Ausom Wheelie Bar (${selectedAusomModel})`;
+  const existing = cart.find(i => i.name === name);
+  if (existing) {
+    existing.qty += 1;
+  } else {
+    cart.push({ name, price: 55, qty: 1 });
+  }
+  renderCart();
+  updateCartCount();
+  showToast(`Ausom Wheelie Bar (${selectedAusomModel}) added ✓`);
+}
+
+// ======================
 // REAR SHOCK MODEL SELECTOR
 // ======================
 let selectedRearShockModel = null;
