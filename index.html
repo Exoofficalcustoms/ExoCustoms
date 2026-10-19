@@ -195,12 +195,12 @@
           </div>
         </div>
 
-        <!-- SCOOTER TYRE -->
+        <!-- AUSOM WHEELIE BAR -->
         <div class="product-card">
           <div class="prod-img-wrap">
             <img
-              src="tyre.jpg"
-              alt="EXO Scooter Tyre"
+              src="ausom.png"
+              alt="EXO Ausom Wheelie Bar"
               class="prod-img prod-img-white"
               loading="lazy"
               onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback')"
@@ -208,25 +208,44 @@
           </div>
           <div class="prod-body">
             <div class="prod-top">
-              <h3 class="prod-name">Scooter Tyre</h3>
+              <h3 class="prod-name">Ausom Wheelie Bar</h3>
             </div>
-            <p class="prod-desc">EXO scooter tyre — good grip on any surface. Solid rubber, handles corners, wet roads and rough ground without sliding out.</p>
+            <p class="prod-desc">EXO wheelie bar built for Ausom scooters. Keeps your back wheel planted so you can hold wheelies longer and cleaner. Fits tight, no flex, no rattle.</p>
             <div class="model-select-wrap">
               <label class="model-label">Select your scooter</label>
-              <div class="model-options" id="tyre-model-options">
-                <button class="model-btn" onclick="selectTyreModel(this, 'G2')">G2</button>
-                <button class="model-btn" onclick="selectTyreModel(this, 'G3')">G3</button>
-                <button class="model-btn" onclick="selectTyreModel(this, 'G3 Pro')">G3 Pro</button>
-                <button class="model-btn" onclick="selectTyreModel(this, 'G4')">G4</button>
-                <button class="model-btn" onclick="selectTyreModel(this, 'G4 Ultra')">G4 Ultra</button>
-                <button class="model-btn" onclick="selectTyreModel(this, 'Joyor T10')">Joyor T10</button>
-                <button class="model-btn" onclick="selectTyreModel(this, 'Joyor S10')">Joyor S10</button>
+              <div class="model-options" id="ausom-model-options">
+                <button class="model-btn" onclick="selectAusomModel(this, 'L1')">L1</button>
+                <button class="model-btn" onclick="selectAusomModel(this, 'L2')">L2</button>
+                <button class="model-btn" onclick="selectAusomModel(this, 'DT2 Pro')">DT2 Pro</button>
               </div>
-              <span class="model-error" id="tyre-model-error"></span>
+              <span class="model-error" id="ausom-error"></span>
             </div>
             <div class="prod-bottom">
-              <span class="prod-price">€40</span>
-              <button class="btn-cart" onclick="addTyreToCart()">Add to Cart</button>
+              <span class="prod-price">€55</span>
+              <button class="btn-cart" onclick="addAusomToCart()">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- G2 PRO WHEELIE BAR -->
+        <div class="product-card">
+          <div class="prod-img-wrap">
+            <img
+              src="g2pro.png"
+              alt="EXO G2 Pro Wheelie Bar"
+              class="prod-img prod-img-white"
+              loading="lazy"
+              onerror="this.style.display='none'; this.parentElement.classList.add('img-fallback')"
+            />
+          </div>
+          <div class="prod-body">
+            <div class="prod-top">
+              <h3 class="prod-name">G2 Pro Wheelie Bar</h3>
+            </div>
+            <p class="prod-desc">EXO wheelie bar built specifically for the G2 Pro. Lock in your wheelies, no bounce, no wobble. Solid fit straight out of the box.</p>
+            <div class="prod-bottom">
+              <span class="prod-price">€55</span>
+              <button class="btn-cart" onclick="addToCart('G2 Pro Wheelie Bar', 55)">Add to Cart</button>
             </div>
           </div>
         </div>
